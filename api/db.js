@@ -31,8 +31,16 @@ const dbFn = {
         console.log(`aktualizacja wiersza o id ${id} w tabeli ${tableName}`);
         //funcja do aktualizacji wiersza w tabel
     },
-    getSelect: (tableName, select) => {
-        console.log(`select ${select} z tabeli ${tableName}`);
+    getSelect: (select) => {
+        console.log(`select ${select}`);
+        try
+        {
+            const data = db.prepare(select).all();
+            return data;
+        }
+        catch(err){
+            console.log(err);
+        }
         //funcja do pobrania selecta z tabeli
     },
 

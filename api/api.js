@@ -15,6 +15,15 @@ router.get('/api/addRow/:tableName', (req, res) => {
 router.get('/api/delRow/:tableName', (req, res) => {
     res.send(dbFn.delRow(req.params.tableName, req.query.id));
 });
+router.get('/api/updateRow/:tableName', (req, res) => {
+    res.send(dbFn.updateRow(req.params.tableName, req.query.id, req.query.row));
+});
+router.post('/api/getSelect', (req, res) => {
+    console.log(req.body.select);
+    res.send(dbFn.getSelect(req.body.select));
+});
+
+
 
 router.get('/api', (req, res) => {
     res.send('test api ;-)');
