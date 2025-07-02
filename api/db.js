@@ -20,7 +20,7 @@ const dbFn = {
     delRow:(tableName, id) => {
         try
             {
-            db.prepare(`DELETE FROM ${tableName} WHERE ID = ${id}`).run();
+            //db.prepare(`DELETE FROM ${tableName} WHERE ID = ${id}`).run();
             console.log(`usuniecie wiersza o id ${id} z tabeli ${tableName}`);
             }
         catch(err){

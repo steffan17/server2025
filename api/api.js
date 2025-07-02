@@ -7,6 +7,7 @@ router.get('/api/getTables', (req, res) => {
     res.send(dbFn.getTables());
 });
 router.get('/api/getTable/:tableName', (req, res) => {
+    console.log(dbFn.getTable(req.params.tableName));
     res.send(dbFn.getTable(req.params.tableName));
 });
 router.get('/api/addRow/:tableName', (req, res) => {
